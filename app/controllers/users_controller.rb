@@ -12,10 +12,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:sexo, :fnac, :userid))
-
-    @user.save
-    redirect_to @user
+    @user = User.new(user_params)
+    if  @user.save
+        render json: @user, status: :created, location: @user
+      else
+        render json: @user.errors, status: :created
+    end
   end
 
 private

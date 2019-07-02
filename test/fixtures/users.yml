@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sexo: MyString
+  fnac: 2019-07-02 14:27:02
+  userid: MyString
+
+two:
+  sexo: MyString
+  fnac: 2019-07-02 14:27:02
+  userid: MyString

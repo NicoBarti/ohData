@@ -1,0 +1,43 @@
+
+<p>
+  <strong>User Id:</strong>
+  <%= @user.userid %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @user.sexo %>
+</p>
+
+<p>
+  <strong>Fecha Nacimiento:</strong>
+  <%= @user.fnac %>
+</p>
+
+<h2>Items</h2>
+<%= render @user.items %>
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @user, @user.items.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :itemid %><br>
+    <%= form.number_field :itemid %>
+  </p>
+  <p>
+    <%= form.label :alt %><br>
+    <%= form.number_field :alt %>
+  </p>
+  <p>
+    <%= form.label :tiempo %><br>
+    <%= form.number_field :tiempo %>
+  </p>
+  <p>
+    <%= form.label :secuencia %><br>
+    <%= form.number_field :secuencia %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Volver', users_path %>

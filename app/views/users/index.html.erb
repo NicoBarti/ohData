@@ -1,0 +1,19 @@
+<h1>Lista de participantes</h1>
+
+<table>
+  <tr>
+    <th>ID Participante</th>
+    <th>Sexo</th>
+    <th>Fecha de nacimiento</th>
+    <th></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.userid %></td>
+      <td><%= user.sexo %></td>
+      <td><%= user.fnac %></td>
+      <td><%= link_to 'Ver', user_path(user) %></td>
+    </tr>
+  <% end %>
+</table>

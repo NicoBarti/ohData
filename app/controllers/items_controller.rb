@@ -1,9 +1,19 @@
 class ItemsController < ApplicationController
 
+protect_from_forgery :except => [:create]
+
   def create
      @user = User.find(params[:user_id])
      @item = @user.items.create(item_params)
-     redirect_to user_path(@user)
+
+     if  @item.save
+         render json: @item, status: :created
+       else
+         render json: @item.errors, status: :created
+     end
+
+
+
    end
 
    private

@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
  protect_from_forgery :except => [:create]
 
+http_basic_authenticate_with name: "Audit", password: "borrar123", only: :destroy
+
+
   def index
      @users = User.all
    end
@@ -20,6 +23,12 @@ class UsersController < ApplicationController
       else
         render json: @user.errors, status: :created
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to "/users"
   end
 
 private

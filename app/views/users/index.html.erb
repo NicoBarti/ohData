@@ -18,6 +18,11 @@
       <td><%= user.created_at %></td>
 
       <td><%= link_to 'Ver', user_path(user) %></td>
+      <td><%= link_to 'Eliminar participante', [user],
+               method: :delete,
+               data: { confirm: '¿Estás seguro? Esto es permanente' } %></td>
+
+
     </tr>
   <% end %>
 </table>

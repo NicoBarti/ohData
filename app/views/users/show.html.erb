@@ -16,8 +16,6 @@
 
 <h2>Items</h2>
 
-
-
 <table>
   <tr>
     <th>Codigo Item (ItemId)</th>
@@ -37,6 +35,30 @@
   <% end %>
 
 </table>
+
+
+<h2>Detalle Tragpos (Item 2)</h2>
+
+<table>
+  <tr>
+    <th>Índice</th>
+    <th>Nombre trago</th>
+    <th>Cantidad seleccionada</th>
+    <th>trago equivalente</th>
+  </tr>
+
+  <% @user.lists.each do |list| %>
+  <tr>
+    <th><%= list.indx %></th>
+    <th><%= list.nombre %></th>
+    <th><%= list.cant %></th>
+    <th><%= list.eq %></th>
+
+  </tr>
+  <% end %>
+
+</table>
+
 
 
 <%= link_to 'Volver', users_path %>

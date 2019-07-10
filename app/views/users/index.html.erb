@@ -5,6 +5,8 @@
     <th>ID Participante</th>
     <th>Sexo</th>
     <th>Fecha de nacimiento</th>
+    <th>Fecha de creación</th>
+
     <th></th>
   </tr>
 
@@ -13,6 +15,8 @@
       <td><%= user.userid %></td>
       <td><%= user.sexo %></td>
       <td><%= user.fnac %></td>
+      <td><%= user.created_at %></td>
+
       <td><%= link_to 'Ver', user_path(user) %></td>
     </tr>
   <% end %>
